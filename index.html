@@ -4,92 +4,286 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sites Utiles pour Développeurs</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            const activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-        }
-        main {
-            padding: 2rem;
-        }
-        section {
-            margin-bottom: 2rem;
-        }
-        h2 {
-            color: #333;
-            border-bottom: 2px solid #555;
-            padding-bottom: 0.5rem;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin: 0.5rem 0;
-        }
-        a {
-            text-decoration: none;
-            color: #007BFF;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    </script>
 </head>
 <body>
     <header>
         <h1>Sites Utiles pour Développeurs</h1>
     </header>
+    
+    <nav>
+        <a href="javascript:void(0)" onclick="showSection('documentation')">Documentation</a>
+        <a href="javascript:void(0)" onclick="showSection('outils')">Outils</a>
+        <a href="javascript:void(0)" onclick="showSection('communautes')">Communautés</a>
+        <a href="javascript:void(0)" onclick="showSection('formations')">Formations</a>
+        <a href="javascript:void(0)" onclick="showSection('ia_open_source')">IA Open Source</a>
+        <a href="javascript:void(0)" onclick="showSection('parcours')">Parcours d'Apprentissage</a>
+        <a href="javascript:void(0)" onclick="showSection('github')">GitHub</a> <!-- Nouveau lien pour GitHub -->
+    </nav>
+    
+    <div class="search-bar">
+        <input 
+            type="text" 
+            id="search-input" 
+            oninput="searchSites()" 
+            placeholder="Rechercher un type de site (ex: IA, documentation, outils)...">
+    </div>
+    
     <main>
-        <section id="documentation">
+        <section id="documentation" class="active">
             <h2>Documentation</h2>
-            <ul>
-                <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a></li>
-                <li><a href="https://devdocs.io/" target="_blank">DevDocs</a></li>
-                <li><a href="https://symfony.com/doc" target="_blank">Symfony Documentation</a></li>
-            </ul>
+            <div class="card">
+                <ul>
+                    <li>
+                        <a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a>
+                        <p class="description">La référence ultime pour apprendre et approfondir vos connaissances en développement web.</p>
+                    </li>
+                    <li>
+                        <a href="https://devdocs.io/" target="_blank">DevDocs</a>
+                        <p class="description">Une documentation hors ligne et en ligne combinant de nombreuses API et frameworks.</p>
+                    </li>
+                    <li>
+                        <a href="https://symfony.com/doc" target="_blank">Symfony Documentation</a>
+                        <p class="description">Documentation officielle pour le framework PHP Symfony.</p>
+                    </li>
+                </ul>
+            </div>
         </section>
         <section id="outils">
             <h2>Outils</h2>
-            <ul>
-                <li><a href="https://github.com/" target="_blank">GitHub</a></li>
-                <li><a href="https://gitlab.com/" target="_blank">GitLab</a></li>
-                <li><a href="https://codepen.io/" target="_blank">CodePen</a></li>
-                <li><a href="https://jsfiddle.net/" target="_blank">JSFiddle</a></li>
-            </ul>
+            <div class="card">
+                <ul>
+                    <li>
+                        <a href="https://github.com/" target="_blank">GitHub</a>
+                        <p class="description">Une plateforme pour héberger et collaborer sur des projets de code source.</p>
+                    </li>
+                    <li>
+                        <a href="https://gitlab.com/" target="_blank">GitLab</a>
+                        <p class="description">Une alternative à GitHub avec des fonctionnalités CI/CD intégrées.</p>
+                    </li>
+                    <li>
+                        <a href="https://codepen.io/" target="_blank">CodePen</a>
+                        <p class="description">Un éditeur de code en ligne pour expérimenter avec HTML, CSS et JavaScript.</p>
+                    </li>
+                    <li>
+                        <a href="https://jsfiddle.net/" target="_blank">JSFiddle</a>
+                        <p class="description">Un outil collaboratif pour tester et partager des extraits de code JavaScript.</p>
+                    </li>
+                    <li>
+                        <a href="https://stackblitz.com/" target="_blank">StackBlitz</a>
+                        <p class="description">Un éditeur de code en ligne rapide pour les projets web et Node.js.</p>
+                    </li>
+                    <li>
+                        <a href="https://codesandbox.io/" target="_blank">CodeSandbox</a>
+                        <p class="description">Une plateforme pour développer et tester rapidement des projets JavaScript.</p>
+                    </li>
+                </ul>
+            </div>
         </section>
         <section id="communautes">
             <h2>Communautés et Forums</h2>
-            <ul>
-                <li><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a></li>
-                <li><a href="https://www.reddit.com/r/programming/" target="_blank">Reddit - r/programming</a></li>
-                <li><a href="https://dev.to/" target="_blank">DEV Community</a></li>
-            </ul>
+            <div class="card">
+                <ul>
+                    <li>
+                        <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>
+                        <p class="description">Un forum de questions-réponses pour résoudre vos problèmes de code.</p>
+                    </li>
+                    <li>
+                        <a href="https://www.reddit.com/r/programming/" target="_blank">Reddit - r/programming</a>
+                        <p class="description">Un sous-forum pour discuter des tendances et des sujets liés à la programmation.</p>
+                    </li>
+                    <li>
+                        <a href="https://dev.to/" target="_blank">DEV Community</a>
+                        <p class="description">Une plateforme de blogs et de partage pour les développeurs de tous niveaux.</p>
+                    </li>
+                </ul>
+            </div>
         </section>
         <section id="formations">
             <h2>Formations et Tutoriels</h2>
-            <ul>
-                <li><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a></li>
-                <li><a href="https://www.udemy.com/" target="_blank">Udemy</a></li>
-                <li><a href="https://www.coursera.org/" target="_blank">Coursera</a></li>
-                <li><a href="https://www.codecademy.com/" target="_blank">Codecademy</a></li>
-                <li><a href="https://www.youtube.com/watch?v=XUFLq6dKQok&list=PLO_fdPEVlfKoanjvTJbIbd9V5d9Pzp8Rw" target="_blank">Playlist YouTube - Deep Learning</a></li>
-            </ul>
+            <div class="card">
+                <ul>
+                    <li>
+                        <a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a>
+                        <p class="description">Des cours gratuits et interactifs pour apprendre le développement web.</p>
+                    </li>
+                    <li>
+                        <a href="https://www.udemy.com/" target="_blank">Udemy</a>
+                        <p class="description">Une plateforme de cours en ligne couvrant de nombreux sujets techniques.</p>
+                    </li>
+                    <li>
+                        <a href="https://www.coursera.org/" target="_blank">Coursera</a>
+                        <p class="description">Des formations proposées par des universités et entreprises reconnues.</p>
+                    </li>
+                    <li>
+                        <a href="https://www.codecademy.com/" target="_blank">Codecademy</a>
+                        <p class="description">Une plateforme pour apprendre le code grâce à des exercices pratiques.</p>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=XUFLq6dKQok&list=PLO_fdPEVlfKoanjvTJbIbd9V5d9Pzp8Rw" target="_blank">Playlist YouTube - Deep Learning</a>
+                        <p class="description">Une playlist pour apprendre les bases et les concepts avancés du deep learning.</p>
+                    </li>
+                    <li>
+                        <a href="https://zestedesavoir.com/tutoriels/822/la-programmation-en-c-moderne/" target="_blank">La Programmation en C Moderne</a>
+                        <p class="description">Un tutoriel complet sur la programmation en C moderne proposé par Zeste de Savoir.</p>
+                    </li>
+                </ul>
+            </div>
         </section>
         <section id="ia_open_source">
             <h2>Intelligence Artificielle Open Source</h2>
-            <ul>
-                <li><a href="https://huggingface.co/models" target="_blank">Hugging Face - Modèles IA</a></li>
-            </ul>
+            <div class="card">
+                <ul>
+                    <li>
+                        <a href="https://huggingface.co/" target="_blank">Hugging Face</a>
+                        <p class="description">Une bibliothèque et une plateforme open-source pour les modèles de NLP et de machine learning.</p>
+                    </li>
+                    <li>
+                        <a href="https://openai.com/" target="_blank">OpenAI</a>
+                        <p class="description">Une plateforme d'IA avancée et de modèles pré-entraînés.</p>
+                    </li>
+                    <li>
+                        <a href="https://tensorflow.org/" target="_blank">TensorFlow</a>
+                        <p class="description">Une bibliothèque open-source pour le machine learning et l'IA.</p>
+                    </li>
+                </ul>
+            </div>
         </section>
+        <section id="parcours">
+            <h2>Parcours d'Apprentissage</h2>
+            <div class="learning-path">
+                <h3>Parcours pour l'Intelligence Artificielle (IA)</h3>
+                <ol>
+                    <li><strong>Python :</strong> Apprenez Python avec <a href="https://www.codecademy.com/learn/learn-python-3" target="_blank">Codecademy</a>.</li>
+                    <li><strong>Machine Learning :</strong> Découvrez les bases du machine learning avec <a href="https://www.coursera.org/learn/machine-learning" target="_blank">Coursera - Andrew Ng</a>.</li>
+                    <li><strong>Deep Learning :</strong> Apprenez à utiliser des réseaux de neurones avec <a href="https://www.deeplearning.ai/" target="_blank">DeepLearning.ai</a>.</li>
+                    <li><strong>Projets :</strong> Mettez en pratique vos compétences avec des projets sur <a href="https://www.kaggle.com/" target="_blank">Kaggle</a>.</li>
+                </ol>
+            </div>
+            <div class="learning-path">
+                <h3>Parcours pour le Développement Web Front-End</h3>
+                <ol>
+                    <li><strong>HTML/CSS :</strong> Apprenez les bases sur <a href="https://www.freecodecamp.org/learn/responsive-web-design/" target="_blank">freeCodeCamp</a>.</li>
+                    <li><strong>JavaScript :</strong> Maîtrisez JavaScript avec <a href="https://www.javascript.com/" target="_blank">JavaScript.com</a>.</li>
+                    <li><strong>React :</strong> Découvrez React avec <a href="https://reactjs.org/docs/getting-started.html" target="_blank">React Documentation</a>.</li>
+                    <li><strong>Projets :</strong> Créez des projets interactifs sur <a href="https://www.frontendmentor.io/" target="_blank">Frontend Mentor</a>.</li>
+                </ol>
+            </div>
+            <div class="learning-path">
+                <h3>Parcours pour le Développement Mobile</h3>
+                <ol>
+                    <li><strong>React Native :</strong> Apprenez à créer des applications mobiles avec React Native sur <a href="https://www.udemy.com/course/the-complete-react-native-and-redux-course/" target="_blank">Udemy</a>.</li>
+                    <li><strong>Flutter :</strong> Découvrez Flutter via la <a href="https://flutter.dev/docs" target="_blank">documentation officielle</a>.</li>
+                    <li><strong>Android :</strong> Apprenez à développer des applications Android avec Kotlin via <a href="https://developer.android.com/docs" target="_blank">Android Developer</a>.</li>
+                    <li><strong>iOS :</strong> Apprenez Swift pour iOS via <a href="https://developer.apple.com/swift/" target="_blank">Apple Developer</a>.</li>
+                </ol>
+            </div>
+            <div class="learning-path">
+                <h3>Parcours pour la Data Science</h3>
+                <ol>
+                    <li><strong>Python :</strong> Apprenez Python pour la Data Science avec <a href="https://www.datacamp.com/courses/intro-to-python-for-data-science" target="_blank">DataCamp</a>.</li>
+                    <li><strong>Statistiques :</strong> Renforcez vos bases avec <a href="https://www.khanacademy.org/math/statistics-probability" target="_blank">Khan Academy</a>.</li>
+                    <li><strong>Machine Learning :</strong> Développez vos compétences en machine learning sur <a href="https://www.coursera.org/learn/machine-learning" target="_blank">Coursera</a>.</li>
+                    <li><strong>Big Data :</strong> Apprenez à manipuler de grandes données avec <a href="https://www.edx.org/learn/big-data" target="_blank">edX</a>.</li>
+                </ol>
+            </div>
+        </section>
+        <section id="github">
+            <h2><a href="https://github.com/" target="_blank">GitHub</a></h2>
+            <div class="card">    
+                <h3>Comment utiliser GitHub - Tutoriel complet</h3>
+                <p>GitHub est une plateforme puissante pour le contrôle de version, l'hébergement de code et la collaboration entre développeurs. Voici un guide détaillé pour vous aider à démarrer avec GitHub.</p>
+        
+                <h4>1. Créer un compte GitHub</h4>
+                <p>La première étape consiste à créer un compte sur GitHub. Rendez-vous sur <a href="https://github.com/join" target="_blank">GitHub Join</a> et suivez les instructions.</p>
+        
+                <h4>2. Créer un nouveau repository</h4>
+                <p>Un repository (repo) est un espace où vous pouvez stocker vos projets de code. Voici comment créer un repository sur GitHub :</p>
+                <ol>
+                    <li>Connectez-vous à votre compte GitHub.</li>
+                    <li>Dans la barre de navigation supérieure, cliquez sur le bouton <strong>New</strong>.</li>
+                    <li>Donnez un nom à votre repository (par exemple, "mon-projet").</li>
+                    <li>Choisissez si votre repository sera public ou privé.</li>
+                    <li>Optionnellement, ajoutez un fichier <code>README.md</code> pour décrire votre projet.</li>
+                    <li>Cliquez sur <strong>Create repository</strong> pour finaliser la création.</li>
+                </ol>
+        
+                <h4>3. Cloner un repository</h4>
+                <p>Cloner un repository vous permet de copier un projet GitHub sur votre machine locale afin d'y apporter des modifications. Voici comment faire :</p>
+                <ol>
+                    <li>Rendez-vous sur la page du repository sur GitHub.</li>
+                    <li>Cliquez sur le bouton <strong>Code</strong> et copiez l'URL du repository (HTTPS ou SSH).</li>
+                    <li>Dans votre terminal, naviguez vers le répertoire où vous souhaitez cloner le projet.</li>
+                    <li>Exécutez la commande suivante :</li>
+                    <pre><code>git clone https://github.com/votre-utilisateur/mon-projet.git</code></pre>
+                    <li>Entrez votre mot de passe si nécessaire, et Git va télécharger le repository sur votre machine locale.</li>
+                </ol>
+        
+                <h4>4. Effectuer des modifications et créer des commits</h4>
+                <p>Une fois que vous avez cloné le repository, vous pouvez apporter des modifications à votre code. Après avoir modifié des fichiers, vous devez les enregistrer dans Git avec un commit.</p>
+                <ol>
+                    <li>Ouvrez un terminal et allez dans le répertoire du projet cloné.</li>
+                    <li>Modifiez vos fichiers à l'aide de votre éditeur de code préféré.</li>
+                    <li>Une fois vos modifications terminées, ajoutez-les à l'index avec la commande :</li>
+                    <pre><code>git add .</code></pre>
+                    <li>Ensuite, créez un commit avec la commande :</li>
+                    <pre><code>git commit -m "Votre message de commit"</code></pre>
+                    <li>Le message de commit doit décrire brièvement les changements que vous avez apportés.</li>
+                </ol>
+        
+                <h4>5. Pousser les modifications sur GitHub</h4>
+                <p>Une fois que vous avez créé un commit, vous devez pousser vos modifications vers GitHub pour les partager avec d'autres développeurs. Utilisez la commande suivante :</p>
+                <pre><code>git push origin main</code></pre>
+                <p>Assurez-vous de remplacer "main" par la branche sur laquelle vous travaillez, si ce n'est pas la branche principale.</p>
+                <p>Après avoir poussé les modifications, vous pourrez voir les mises à jour sur la page GitHub de votre repository.</p>
+        
+                <h4>6. Collaborer avec les autres via les Pull Requests</h4>
+                <p>Les Pull Requests (PR) sont utilisées pour proposer des modifications à un repository. Si vous contribuez à un projet open-source, c'est ainsi que vous soumettez vos modifications pour qu'elles soient examinées et fusionnées dans le code principal.</p>
+                <ol>
+                    <li>Faites un fork du repository auquel vous voulez contribuer en cliquant sur le bouton <strong>Fork</strong> sur la page du repository.</li>
+                    <li>Clonez le repository forké sur votre machine.</li>
+                    <li>Apportez les modifications nécessaires et créez un commit comme expliqué précédemment.</li>
+                    <li>Poussez vos modifications sur votre fork.</li>
+                    <li>Sur la page GitHub de votre fork, cliquez sur le bouton <strong>Compare & pull request</strong> pour proposer vos modifications au repository d'origine.</li>
+                    <li>Rédigez un message de PR et soumettez-le pour qu'il soit examiné par les mainteneurs du projet.</li>
+                </ol>
+        
+                <h4>7. Gérer les branches</h4>
+                <p>Les branches permettent de travailler sur des fonctionnalités ou des correctifs sans affecter la branche principale (souvent appelée "main" ou "master"). Voici quelques commandes de base pour gérer les branches :</p>
+                <ul>
+                    <li><strong>Créer une nouvelle branche :</strong>
+                        <pre><code>git checkout -b nouvelle-branche</code></pre>
+                    </li>
+                    <li><strong>Basculer entre les branches :</strong>
+                        <pre><code>git checkout nom-de-la-branche</code></pre>
+                    </li>
+                    <li><strong>Fusionner une branche dans la branche principale :</strong>
+                        <pre><code>git merge nom-de-la-branche</code></pre>
+                    </li>
+                    <li><strong>Supprimer une branche locale :</strong>
+                        <pre><code>git branch -d nom-de-la-branche</code></pre>
+                    </li>
+                </ul>
+        
+                <h4>8. Ressources pour apprendre Git et GitHub</h4>
+                <p>Voici quelques ressources pour approfondir vos connaissances sur Git et GitHub :</p>
+                <ul>
+                    <li><a href="https://guides.github.com/" target="_blank">GitHub Guides</a> - Des guides officiels pour apprendre à utiliser GitHub.</li>
+                    <li><a href="https://www.codecademy.com/learn/learn-git" target="_blank">Codecademy - Git</a> - Un tutoriel interactif pour apprendre Git.</li>
+                    <li><a href="https://git-scm.com/doc" target="_blank">Git Documentation</a> - La documentation officielle de Git.</li>
+                    <li><a href="https://www.udemy.com/course/git-started-with-git/" target="_blank">Udemy - Git Course</a> - Un cours complet sur Git et GitHub pour les débutants.</li>
+                </ul>
+            </div>
+        </section>        
     </main>
 </body>
 </html>

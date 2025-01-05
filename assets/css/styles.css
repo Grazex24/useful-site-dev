@@ -1,0 +1,116 @@
+
+:root {
+    --primary-color: #333;
+    --secondary-color: #555;
+    --background-color: #f4f4f9;
+    --text-color: #333;
+    --card-bg-color: #fff;
+    --card-border-color: #ddd;
+    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    box-shadow: var(--card-shadow);
+}
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+nav {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem;
+}
+nav a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+section {
+    display: none;
+}
+section.active {
+    display: block;
+}
+h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid var(--secondary-color);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+.card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--card-shadow);
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    margin: 0.5rem 0;
+}
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: underline;
+    color: var(--secondary-color);
+}
+.description {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+.search-bar {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+.search-bar input {
+    width: 60%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+.learning-path {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+.learning-path ol {
+    padding-left: 1.5rem;
+}
+.learning-path li {
+    margin-bottom: 0.5rem;
+}
