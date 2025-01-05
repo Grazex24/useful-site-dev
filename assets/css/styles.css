@@ -13,6 +13,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
+    background: linear-gradient(135deg, #f4f4f9, #e0e0e0);
     color: var(--text-color);
 }
 
@@ -22,7 +23,13 @@ header {
     text-align: center;
     padding: 1.5rem 0;
     box-shadow: var(--card-shadow);
+    background-image: url('your-image-url.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
 }
+
 
 header h1 {
     margin: 0;
@@ -76,7 +83,14 @@ h2 {
     padding: 1rem;
     margin-bottom: 1rem;
     box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.card:hover {
+    transform: translateY(-5px); /* Légère élévation de la carte */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+}
+
 
 ul {
     list-style: none;
