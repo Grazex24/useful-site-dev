@@ -1,4 +1,3 @@
-
 :root {
     --primary-color: #333;
     --secondary-color: #555;
@@ -8,6 +7,7 @@
     --card-border-color: #ddd;
     --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -15,6 +15,7 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
 }
+
 header {
     background-color: var(--primary-color);
     color: #fff;
@@ -22,35 +23,43 @@ header {
     padding: 1.5rem 0;
     box-shadow: var(--card-shadow);
 }
+
 header h1 {
     margin: 0;
     font-size: 2rem;
 }
+
 nav {
     background-color: var(--primary-color);
     color: #fff;
     padding: 1rem;
 }
+
 nav a {
     color: #fff;
     margin: 0 1rem;
     text-decoration: none;
     font-weight: bold;
 }
+
 nav a:hover {
     text-decoration: underline;
 }
+
 main {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 1rem;
 }
+
 section {
     display: none;
 }
+
 section.active {
     display: block;
 }
+
 h2 {
     color: var(--primary-color);
     font-size: 1.5rem;
@@ -59,6 +68,7 @@ h2 {
     display: inline-block;
     padding-bottom: 0.5rem;
 }
+
 .card {
     background-color: var(--card-bg-color);
     border: 1px solid var(--card-border-color);
@@ -67,31 +77,53 @@ h2 {
     margin-bottom: 1rem;
     box-shadow: var(--card-shadow);
 }
+
 ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
+
 li {
     margin: 0.5rem 0;
 }
+
 a {
     text-decoration: none;
     color: var(--primary-color);
     font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
+
 a:hover {
     text-decoration: underline;
     color: var(--secondary-color);
 }
+
+h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid var(--secondary-color);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+h2:hover {
+    color: var(--secondary-color); /* Change la couleur lors du survol */
+}
+
 .description {
     font-size: 0.9rem;
     color: var(--secondary-color);
 }
+
 .search-bar {
     text-align: center;
     margin: 1.5rem 0;
 }
+
 .search-bar input {
     width: 60%;
     padding: 0.5rem;
@@ -100,6 +132,7 @@ a:hover {
     border-radius: 8px;
     box-shadow: var(--card-shadow);
 }
+
 .learning-path {
     margin-top: 2rem;
     padding: 1rem;
@@ -108,9 +141,132 @@ a:hover {
     border-radius: 8px;
     box-shadow: var(--card-shadow);
 }
+
 .learning-path ol {
     padding-left: 1.5rem;
 }
+
 .learning-path li {
     margin-bottom: 0.5rem;
+}
+
+/* Révisions pour la responsivité */
+
+/* Mobile et tablettes */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    nav a {
+        margin: 0.5rem;
+        font-size: 1rem;
+    }
+
+    main {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .search-bar input {
+        width: 80%;
+    }
+
+    .card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .learning-path {
+        margin-top: 1.5rem;
+        padding: 1rem;
+    }
+}
+
+/* Mobile (petits écrans) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    nav a {
+        margin: 0.5rem;
+        font-size: 1rem;
+        display: block;
+    }
+
+    main {
+        margin: 1rem;
+        padding: 0.5rem;
+    }
+
+    .search-bar input {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .learning-path {
+        margin-top: 1rem;
+        padding: 0.8rem;
+    }
+}
+
+/* Mobile très petits écrans */
+@media (max-width: 480px) {
+    header {
+        padding: 1rem;
+    }
+
+    nav a {
+        margin: 0.3rem;
+        font-size: 0.9rem;
+        display: inline-block;
+    }
+
+    main {
+        margin: 1rem;
+        padding: 0.5rem;
+    }
+
+    .search-bar input {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .card {
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .learning-path {
+        margin-top: 1rem;
+        padding: 0.8rem;
+    }
 }

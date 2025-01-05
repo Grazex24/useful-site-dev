@@ -1,6 +1,6 @@
 # Projet de Site Web - Site Utile pour Développeurs
 
-**Auteurs** : Platel-lentz Mathis.
+## Auteurs : Platel-lentz Mathis.
 
 ## Description
 
